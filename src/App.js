@@ -81,7 +81,11 @@ export default function App() {
         todoText={todoText}
         onChange={onChangeTodoText}
         onClickAdd={onClickAdd}
+        disabled={incompleteTodos.length >= 5}
       />
+      {incompleteTodos.length >= 5 && (
+        <p style={{ color: "red" }}>登録できるTODOは5個までです。</p>
+      )}
       <IncompleteTodos
         incompleteTodos={incompleteTodos}
         onClickComplete={onClickComplete}
